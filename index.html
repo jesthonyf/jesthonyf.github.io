@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE http-equiv="" ml>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -195,7 +195,6 @@ p,li{
 .controls{
     text-align:center;
     margin-top:10px;
-    touch-action:none;
 }
 .controls button{
     width:55px;
@@ -565,9 +564,11 @@ e.clientY
 document.querySelectorAll(".move").forEach(btn=>{
 
 btn.addEventListener("touchstart",()=>{
+
 btn.style.left=(Math.random()*30-15)+"px";
 btn.style.top=(Math.random()*20-10)+"px";
-},{passive:true});
+
+});
 
 btn.addEventListener("mouseover",()=>{
 
@@ -671,23 +672,19 @@ let py=250;
 let dscore=0;
 let playing=false;
 let enemies=[];
-let spawnTimer=null;
 
 function startDodge(){
 
 let screen=document.getElementById("dodgeScreen");
 
-clearTimeout(spawnTimer);
-
-playing=false;
-enemies.forEach(e=>e.remove());
-enemies=[];
-
-px=Math.max(0,screen.clientWidth/2-20);
-py=Math.max(0,screen.clientHeight-60);
+px=screen.clientWidth/2;
+py=screen.clientHeight-60;
 
 dscore=0;
 playing=true;
+
+enemies.forEach(e=>e.remove());
+enemies=[];
 
 updatePlayer();
 
@@ -751,7 +748,7 @@ enemies.push(e);
 
 fall(e);
 
-spawnTimer=setTimeout(spawn,700);
+setTimeout(spawn,700);
 
 }
 
@@ -790,7 +787,6 @@ a.bottom>b.top
 ){
 
 playing=false;
-clearTimeout(spawnTimer);
 
 clearInterval(interval);
 
