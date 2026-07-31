@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Jesth For-og</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Courier New', monospace;
+    background:linear-gradient(135deg,#0a0a0a,#1a1a1a,#0f0f1a);
+    color:#d8ffd0;
+    overflow-x:hidden;
+}
+
+/* Header */
+header{
+    background:#111;
+    border-bottom:2px solid #7cff00;
+    padding:15px;
+    text-align:center;
+}
+header h1{
+    color:#9cff00;
+    font-size:28px;
+    text-shadow:0 0 15px #7cff00;
+    animation:glowText 3s infinite;
+}
+@keyframes glowText{
+    0%,100%{color:#7cff00;text-shadow:0 0 15px #7cff00;}
+    50%{color:#00ffff;text-shadow:0 0 25px #00ffff;}
+}
+
+/* Container */
+.container{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+/* Contact Box */
+.box{
+    background:#0f0f0f;
+    border:2px solid #00ffff;
+    border-radius:12px;
+    box-shadow:0 0 20px #00ffff;
+    padding:25px;
+    text-align:center;
+    transition:transform .6s, box-shadow .6s;
+    transform-style:preserve-3d;
+    animation:float 5s ease-in-out infinite;
+}
+.box:hover{
+    transform:translateY(-15px) scale(1.05) rotateX(5deg);
+    box-shadow:0 0 40px #ff00ff;
+}
+.box h2{
+    color:#7cff00;
+    font-size:20px;
+    margin-bottom:10px;
+    text-shadow:0 0 10px #7cff00;
+    animation:textPulse 3s infinite;
+}
+@keyframes textPulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:.7;transform:scale(1.1);}
+}
+.box a, .box p{
+    font-size:16px;
+    color:#00ffff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+    display:inline-block;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeInUp 1s forwards;
+}
+.box a:hover{
+    color:#0a0a0a;
+    background:#7cff00;
+    padding:5px 10px;
+    border-radius:6px;
+}
+@keyframes fadeInUp{
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* Floating animation */
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    border-top:2px solid #7cff00;
+    margin-top:40px;
+    color:#7cff00;
+    font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>☣ Contact Me</h1>
+</header>
+
+<div class="container">
+    <div class="box">
+        <h2>Facebook 🌐</h2>
+        <a href="https://www.facebook.com/share/1BuoozPXKf/" target="_blank">Visit My Facebook Profile</a>
+    </div>
+    <div class="box">
+        <h2>Phone 📞</h2>
+        <p><a href="tel:09542799143">09542799143</a></p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Jesth For-og | Criminology Student • Creator • Future Professional
+</footer>
+
+</body>
+</html>
